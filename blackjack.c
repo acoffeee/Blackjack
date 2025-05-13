@@ -17,22 +17,23 @@ int main() {
       player_cards[i] = card();
       i++;
   };
-  int prompt_cards(player_cards, dealer_cards);
+  void prompt_cards();
+  prompt_cards(player_cards, dealer_cards);
   //printf("your cards: %d %d \n dealers cards: %d N", player_cards[0], player_cards[1], dealer_cards[0]);
-  void choice();
+  //void choice();
   
   //printf("%d, %d, %d", *player_cards, *dealer_cards, dealer_cards[1]);
   return 0;
 }
-int prompt_cards(int player_cards,int dealer_cards) {
+void prompt_cards(int *player_cards, int *dealer_cards) {
     int i = 0;
-    int length = player_cards / sizeof(int);
-    while (i<= player_cards;) {
-        printf("%d", player_cards[i])
-    };
-    printf("\n dealer shown card: %d", *dealer_cards);
-    return 0;
-};
+    int length = sizeof(player_cards) / sizeof(int);
+    while (i< length) {
+        printf("user card %d: %d\n", i, player_cards[i]);
+        i++;
+    }
+    printf("\n dealer card: %d", *dealer_cards);
+}
 void choice() {
     printf("what would you like to do?\n 1. hit \n 2. call \n 3. 50/50 chance of me adding other functions");
     int choice;
